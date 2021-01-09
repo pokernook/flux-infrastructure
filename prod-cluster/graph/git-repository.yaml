@@ -5,7 +5,7 @@ metadata:
   name: graph
   namespace: flux-system
 spec:
-  interval: 30s
+  interval: 1m0s
   ref:
     semver: 0.x
   url: https://github.com/pokernook/graph
