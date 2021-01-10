@@ -1,0 +1,26 @@
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Provider
+metadata:
+  name: graph-gh
+  namespace: flux-system
+spec:
+  type: github
+  channel: general
+  address: https://github.com/pokernook/graph
+  secretRef:
+    name: github
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Alert
+metadata:
+  name: graph-gh
+  namespace: flux-system
+spec:
+  providerRef:
+    name: graph-gh
+  eventSeverity: info
+  eventSources:
+    - kind: Kustomization
+      name: graph
+      namespace: flux-system
