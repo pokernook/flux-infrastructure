@@ -7,5 +7,5 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: flux # TODO: Change back to main branch
+    branch: main
   url: https://github.com/pokernook/graph
