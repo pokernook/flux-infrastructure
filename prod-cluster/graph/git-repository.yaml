@@ -9,3 +9,5 @@ spec:
   ref:
     branch: main
   url: https://github.com/pokernook/graph
+  secretRef:
+    name: github
