@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: web
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: graph
+  interval: 1m0s
+  path: ./deploy
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: web
+  validation: client
