@@ -1,0 +1,26 @@
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Provider
+metadata:
+  name: web-gh
+  namespace: flux-system
+spec:
+  type: github
+  channel: general
+  address: https://github.com/pokernook/web
+  secretRef:
+    name: github
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Alert
+metadata:
+  name: web-gh
+  namespace: flux-system
+spec:
+  providerRef:
+    name: web-gh
+  eventSeverity: info
+  eventSources:
+    - kind: Kustomization
+      name: web
+      namespace: flux-system
