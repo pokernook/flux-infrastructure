@@ -9,3 +9,15 @@ spec:
   interval: 1m0s
   secretRef:
     name: regcred
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImagePolicy
+metadata:
+  name: web
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: web
+  policy:
+    semver:
+      range: 0.x
