@@ -7,7 +7,7 @@ metadata:
 spec:
   dependsOn:
     - name: graph
-  interval: 1m0s
+  interval: 10m0s
   path: ./deploy
   prune: true
   sourceRef:

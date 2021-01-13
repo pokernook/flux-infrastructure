@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   image: ghcr.io/pokernook/graph
-  interval: 1m0s
+  interval: 10m0s
   secretRef:
     name: regcred
 ---
@@ -36,6 +36,6 @@ spec:
     authorEmail: fluxcdbot@users.noreply.github.com
     authorName: fluxcdbot
     messageTemplate: "[ci skip] update image"
-  interval: 1m0s
+  interval: 10m0s
   update:
     setters: {}
