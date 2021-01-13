@@ -10,7 +10,7 @@ spec:
     branch: main
   secretRef:
     name: web-auth
-  url: https://github.com/pokernook/web
+  url: ssh://git@github.com/pokernook/web
 ---
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
