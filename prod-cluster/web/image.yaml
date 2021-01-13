@@ -21,3 +21,21 @@ spec:
   policy:
     semver:
       range: 0.x
+---
+apiVersion: image.toolkit.fluxcd.io/v1alpha1
+kind: ImageUpdateAutomation
+metadata:
+  name: web
+  namespace: flux-system
+spec:
+  checkout:
+    branch: main
+    gitRepositoryRef:
+      name: web
+  commit:
+    authorEmail: fluxcdbot@users.noreply.github.com
+    authorName: fluxcdbot
+    messageTemplate: "[ci skip] update image"
+  interval: 1m0s
+  update:
+    setters: {}
