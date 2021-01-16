@@ -2,21 +2,21 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: graph
+  name: graphql
   namespace: flux-system
 spec:
   interval: 10m0s
   ref:
     branch: main
   secretRef:
-    name: graph-auth
-  url: ssh://git@github.com/pokernook/graph
+    name: graphql-auth
+  url: ssh://git@github.com/pokernook/graphql
 ---
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   creationTimestamp: null
-  name: graph-auth
+  name: graphql-auth
   namespace: flux-system
 spec:
   encryptedData:
@@ -26,5 +26,5 @@ spec:
   template:
     metadata:
       creationTimestamp: null
-      name: graph-auth
+      name: graphql-auth
       namespace: flux-system

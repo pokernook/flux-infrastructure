@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: graph
+    - name: graphql
   interval: 10m0s
   path: ./deploy
   prune: true

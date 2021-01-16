@@ -2,10 +2,10 @@
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImageRepository
 metadata:
-  name: graph
+  name: graphql
   namespace: flux-system
 spec:
-  image: ghcr.io/pokernook/graph
+  image: ghcr.io/pokernook/graphql
   interval: 10m0s
   secretRef:
     name: regcred
@@ -13,11 +13,11 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImagePolicy
 metadata:
-  name: graph
+  name: graphql
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: graph
+    name: graphql
   policy:
     semver:
       range: 0.x
@@ -25,13 +25,13 @@ spec:
 apiVersion: image.toolkit.fluxcd.io/v1alpha1
 kind: ImageUpdateAutomation
 metadata:
-  name: graph
+  name: graphql
   namespace: flux-system
 spec:
   checkout:
     branch: main
     gitRepositoryRef:
-      name: graph
+      name: graphql
   commit:
     authorEmail: fluxcdbot@users.noreply.github.com
     authorName: fluxcdbot
